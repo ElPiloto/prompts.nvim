@@ -1,7 +1,7 @@
 # prompts.nvim
 no, not that kind of prompt. prompts for your vimwiki.
 
-### WIP: This plugin is not yet ready for widespread use.
+### Warning: WIP. Even when completed, mainly intended for personal use.
 
 ```
 ██   ██████  ██████   ██████  ███    ███ ██████  ████████ ███████    ███    ██ ██    ██ ██ ███    ███ 
@@ -16,7 +16,7 @@ no, not that kind of prompt. prompts for your vimwiki.
 ### Current configuration settings (WIP)
 
 Values below reflect sensible defaults.  If you do not have a font patched with nerd fonts, you should change the unicode/icons below.
-
+<!--
 ```
 " To actually use sidekick! (toggles it on/off for current tab).
 nmap <F8> :call SideKickNoReload()<CR>
@@ -71,6 +71,7 @@ let g:sidekick_left_bracket = "\u27ea"
 let g:sidekick_right_bracket = "\u27eb"
 
 ```
+-->
 
 ### Requirements
 
