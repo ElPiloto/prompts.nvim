@@ -131,3 +131,10 @@ let g:sidekick_right_bracket = "\u27eb"
 - [ ] Generate outline based on LSP.
 - [ ] Decouple rendering from outline in order to:
   1. Interface to allow other tag definition backends (e.g. LSP or ctags)
+
+## Acknowledgements
+
+Included prompts were sourced from various locations on the internet with minor rearrangement by me into separate lists. Here are the specific sources:
+- [u/Dahija](https://www.reddit.com/r/JournalingIsArt/comments/13njgp/1000_prompts/)
+- [Psych Central](https://psychcentral.com/blog/30-more-journaling-prompts-for-self-reflection-and-self-discovery#4)
+- [Psych Central](https://psychcentral.com/blog/ready-set-journal-64-journaling-prompts-for-self-discovery#getting-unstuck)
