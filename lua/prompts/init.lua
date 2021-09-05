@@ -4,6 +4,7 @@
 -- TODO(elpiloto): make debug level based on sidekick option.
 --local log = require('plenary.log').new({ plugin = 'prompts.nvim', level='debug' })
 -- luacheck: pop
+loader = require('prompts.prompt_loader')
 
 local M = {}
 
@@ -44,6 +45,7 @@ M.add_prompt_if_empty = function()
   local is_diary = M.is_diary_file(fname, method)
   if is_diary then
     print("We would add a prompt now!")
+    loader.load_prompts("nothing")
   end
 end
 

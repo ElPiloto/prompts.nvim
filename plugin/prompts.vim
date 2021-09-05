@@ -29,3 +29,5 @@ endif
 augroup Prompts
   autocmd BufCreate */diary/* :lua require('prompts').add_prompt_if_empty()
 augroup END
+
+let g:prompts_resources_dir = expand("<sfile>:h:h") .. "/resources/"
