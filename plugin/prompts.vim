@@ -9,9 +9,12 @@ augroup Prompts
 augroup END
 
 if !exists('g:prompts_vimwiki_list')
-  " TODO(ElPiloto): Remove writing here.
+  " Specify a list of prompt files using $SUBDIR/$FNAME_NO_EXT format
+  " ['writing.i_wish'] will load ./resources/prompts/writing/i_wish.txt"
+  " ['diary.*'] will load all files under./resources/prompts/diary/
   let g:prompts_vimwiki_list = ['diary.*', 'writing.i_wish', 'writing.how']
 endif
+" TODO(ElPiloto): Actually use this.
 if !exists('g:prompts_enable_vimwiki')
   let g:prompts_enable_vimwiki = 1
 endif
