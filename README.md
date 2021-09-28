@@ -1,7 +1,7 @@
 # prompts.nvim
 no, not that kind of prompt. prompts for your vimwiki!
 
-_This plugin will populate any empty files matching `*/diary/*` with a prompt._
+_This plugin will populate any empty files matching `*/diary/*` with a randomly selected prompt._
 
 ### Warning: WIP. Even when completed, mainly intended for personal use.
 
@@ -37,6 +37,10 @@ let g:prompts_manual_diary_check = 1
 let g:prompts_valid_diary_extensions = ['wiki', 'md']
 
 ```
+
+### Adding your own prompts
+
+The prompts used by vimwiki are in simple text format under `./resources/prompts/$SUBDIR/$FNAME.txt`  Each prompt should be on its own line. You can add new prompts to existing files under the `resources/prompts` directory. Alternatively, you can create a new file or subdirectory and add this value to your `g:prompts_vimwiki_list`.  For example, you could add `resources/prompts/custom_prompts/quotes.txt` and configure prompts.nvim with: `let g:prompts_vimwiki_list = ['custom_prompts.quotes']` (NOTE: we omit the file extension.)
 
 
 ## Acknowledgements
