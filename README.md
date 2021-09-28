@@ -13,6 +13,8 @@ _This plugin will populate any empty files matching `*/diary/*` with a randomly 
 ██   ██      ██   ██  ██████  ██      ██ ██         ██    ███████ ██ ██   ████   ████   ██ ██      ██ 
 ```
 
+<script id="asciicast-438566" src="https://asciinema.org/a/438566.js" async></script>
+
 ### Requuirements:
 
 - neovim (>= 0.5.0)
