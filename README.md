@@ -1,5 +1,7 @@
 # prompts.nvim
-no, not that kind of prompt. prompts for your vimwiki.
+no, not that kind of prompt. prompts for your vimwiki!
+
+_This plugin will populate any empty files matching `*/diary/*` with a prompt._
 
 ### Warning: WIP. Even when completed, mainly intended for personal use.
 
@@ -11,8 +13,10 @@ no, not that kind of prompt. prompts for your vimwiki.
 ██   ██      ██   ██  ██████  ██      ██ ██         ██    ███████ ██ ██   ████   ████   ██ ██      ██ 
 ```
 
-This plugin will populate any empty files matching `*/diary/*` with a prompt.
+### Requuirements:
 
+- neovim (>= 0.5.0)
+- vimwiki
 
 ### Plugin configuration settings (WIP)
 
