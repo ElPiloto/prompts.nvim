@@ -1,6 +1,7 @@
+" Let's us reload our lua code by calling :call Prompts()
 fun! Prompts()
 	lua for k in pairs(package.loaded) do if k:match("^prompts") then package.loaded[k] = nil end end
-	lua require("prompts").run(1)
+	lua require("prompts")
 endfun
 
 augroup Prompts
@@ -27,7 +28,8 @@ if !exists('g:prompts_valid_diary_extensions')
   let g:prompts_valid_diary_extensions = ['wiki', 'md']
 endif
 augroup Prompts
-  autocmd BufCreate */diary/* :lua require('prompts').add_prompt_if_empty()
+  autocmd BufEnter */diary/* :lua require('prompts').add_prompt_if_empty()
+  " autocmd BufAdd,BufNewFile */diary/* :lua require('prompts').add_prompt_if_empty()
 augroup END
 
 let g:prompts_resources_dir = expand("<sfile>:h:h") .. "/resources/"

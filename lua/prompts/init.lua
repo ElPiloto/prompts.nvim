@@ -36,14 +36,44 @@ M.is_diary_file = function(fname, method)
   end
 end
 
+local check_buffer_is_empty = function(buf_nr)
+  --todo set default value of 0 for buf_nr if not specified
+  -- 0 as bufnr gives current buffer
+  local num_lines = vim.api.nvim_buf_line_count(buf_nr)
+  if num_lines > 1 then
+    -- TODO(elpiloto): Prompt user to insert prompt at top line.
+    print(tostring(num_lines))
+    print('Diary file has too many lines, cannot insert prompt.')
+    return
+  end
+
+  print("Buffer number is: " .. tostring(buf_nr))
+  local buf_line = vim.api.nvim_buf_get_lines(buf_nr, 0, 1, false)
+  print(vim.inspect(buf_line))
+  -- if true then
+  --   return
+  -- end
+  if buf_line[1]:gsub("^%s*(.-)%s*$", "%1") ~= '' then
+    -- print('First line was: ' .. buf_line[1] .. ', not empty.')
+    -- print('Diary file is not empty, cannot insert prompt.')
+    return false
+  end
+  return true
+end
+
 M.add_prompt_if_empty = function()
   local fname = vim.fn.expand("<afile>")
+  local new_buf_nr = vim.fn.expand("<abuf>")
   local method = M.VIMWIKI_FN
   if vim.g.prompts_manual_diary_check == 1 then
     method = M.DATE_AND_EXTENSION
   end
   local is_diary = M.is_diary_file(fname, method)
   if is_diary then
+    print("Found a diary file. Checking if empty...")
+  end
+  local is_empty = check_buffer_is_empty(new_buf_nr)
+  if is_empty then
     print("We would add a prompt now!")
     loader.load_prompts("nothing")
   end
