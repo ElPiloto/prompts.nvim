@@ -24,7 +24,6 @@ M.is_diary_file = function(fname, method)
     local ext_capture = string.match(fname, date_ext_pattern)
     for _, valid_ext in pairs(vim.g.prompts_valid_diary_extensions) do
       if ext_capture == valid_ext then
-        print("Valid file.")
         return true
       end
     end
@@ -42,14 +41,12 @@ local check_buffer_is_empty = function(buf_nr)
   local num_lines = vim.api.nvim_buf_line_count(buf_nr)
   if num_lines > 1 then
     -- TODO(elpiloto): Prompt user to insert prompt at top line.
-    print(tostring(num_lines))
+    --print(tostring(num_lines))
     print('Diary file has too many lines, cannot insert prompt.')
     return
   end
 
-  print("Buffer number is: " .. tostring(buf_nr))
   local buf_line = vim.api.nvim_buf_get_lines(buf_nr, 0, 1, false)
-  print(vim.inspect(buf_line))
   if buf_line[1]:gsub("^%s*(.-)%s*$", "%1") ~= '' then
     return false
   end

@@ -13,7 +13,7 @@ _This plugin will populate any empty files matching `*/diary/*` with a randomly 
 ██   ██      ██   ██  ██████  ██      ██ ██         ██    ███████ ██ ██   ████   ████   ██ ██      ██ 
 ```
 
-<script id="asciicast-438566" src="https://asciinema.org/a/438566.js" async></script>
+[![asciicast](https://asciinema.org/a/438566.svg)](https://asciinema.org/a/438566)
 
 ### Requuirements:
 
