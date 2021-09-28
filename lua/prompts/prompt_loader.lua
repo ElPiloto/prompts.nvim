@@ -36,7 +36,7 @@ local read_file_if_exists = function(f)
 end
 
 
-M.load_prompts = function(key)
+M.load_prompts = function()
   local prompts = {}
   local vimwiki_list = vim.g.prompts_vimwiki_list
   local files = {}

@@ -50,12 +50,7 @@ local check_buffer_is_empty = function(buf_nr)
   print("Buffer number is: " .. tostring(buf_nr))
   local buf_line = vim.api.nvim_buf_get_lines(buf_nr, 0, 1, false)
   print(vim.inspect(buf_line))
-  -- if true then
-  --   return
-  -- end
   if buf_line[1]:gsub("^%s*(.-)%s*$", "%1") ~= '' then
-    -- print('First line was: ' .. buf_line[1] .. ', not empty.')
-    -- print('Diary file is not empty, cannot insert prompt.')
     return false
   end
   return true
@@ -69,12 +64,9 @@ M.add_prompt_if_empty = function()
     method = M.DATE_AND_EXTENSION
   end
   local is_diary = M.is_diary_file(fname, method)
-  if is_diary then
-    print("Found a diary file. Checking if empty...")
-  end
   local is_empty = check_buffer_is_empty(new_buf_nr)
   if is_empty then
-    local prompts = loader.load_prompts("nothing")
+    local prompts = loader.load_prompts()
     local prompt = loader.choose_random_element(prompts)
     vim.api.nvim_buf_set_lines(buf_nr, 0, 1, false, {prompt})
   end
