@@ -2,9 +2,8 @@ local path = require('plenary.path')
 local M = {}
 math.randomseed(os.time())
 
-local choose_random_element = function(t)
+M.choose_random_element = function(t)
   local rand_number = math.random(#t)
-  print('Found elements: ' .. tostring(#t) .. ' and chose random number ' .. tostring(rand_number))
   return t[rand_number]
 end
 
@@ -63,7 +62,6 @@ M.load_prompts = function(key)
       table_concat(prompts, file_contents)
     end
   end
-  print(choose_random_element(prompts))
   return prompts
 end
 

@@ -74,8 +74,9 @@ M.add_prompt_if_empty = function()
   end
   local is_empty = check_buffer_is_empty(new_buf_nr)
   if is_empty then
-    print("We would add a prompt now!")
-    loader.load_prompts("nothing")
+    local prompts = loader.load_prompts("nothing")
+    local prompt = loader.choose_random_element(prompts)
+    vim.api.nvim_buf_set_lines(buf_nr, 0, 1, false, {prompt})
   end
 end
 
